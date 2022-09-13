@@ -1,0 +1,120 @@
+
+
+# 		SQL Exercise-1
+#=====================================================================================================
+1.createjob and location table structures
+
+#location table
+>create table location(lcode int(5),name varchar(20));
+>insert into location values(122,"chicago");
+>insert into location values(123,"Atlantica");
+>select * from location;
++-------+-----------+
+| lcode | name      |
++-------+-----------+
+|   122 | chicago   |
+|   123 | Atlantica |
++-------+-----------+
+
+#2. job  table
+>create table job(jcode varchar(20),name varchar(20));
+>insert into job values("667","clerk");
+>insert into job values("668","staff");
+>select * from location;
+
++-------+-------+
+| jcode | name  |
++-------+-------+
+| 667   | clerk |
+| 668   | staff |
++-------+-------+ 
+
+
+#=====================================================================================================
+2.insert values into employee table?
+
+
+# employee table
+>create table employee(empid varchar(20),empname varchar(30),hiredate varchar(20),salary float(10,2));
+>desc employee;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empid    | varchar(20) | YES  |     | NULL    |       |
+| empname  | varchar(30) | YES  |     | NULL    |       |
+| hiredate | varchar(20) | YES  |     | NULL    |       |
+| salary   | float(10,2) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+> insert into employee values("21","Ramesh","20/03/2019",25000.00);
+> select * from employee;
++-------+---------+------------+----------+
+| empid | empname | hiredate   | salary   |
++-------+---------+------------+----------+
+| 21    | Ramesh  | 20/03/2019 | 25000.00 |
++-------+---------+------------+----------+
+
+#=====================================================================================================
+3.write update command to change the deparment number of all the employees in the table to 60?
+
+> select * from employee;
++-------+-----------------+------------+----------+------------+
+| empid | empname         | hiredate   | salary   | department |
++-------+-----------------+------------+----------+------------+
+| 21    | Ramesh          | 20/03/2019 | 25000.00 | NULL       |
+| 22    | Mudavath Ramesh | 22/03/2019 | 35000.00 | 60         |
+| 23    | Ram             | 20/03/2019 | 25000.00 | NULL       |
+| 29    | Ravi            | 20/03/2019 | 25000.00 | NULL       |
+| 34    | Rani            | 20/03/2019 | 25000.00 | NULL       |
+| 19    | Ramu            | 20/03/2019 | 25000.00 | NULL       |
++-------+-----------------+------------+----------+------------+
+
+> update employee set department="60";
+Query OK, 5 rows affected (0.05 sec)
+Rows matched: 6  Changed: 5  Warnings: 0
+
+> select * from employee;
++-------+-----------------+------------+----------+------------+
+| empid | empname         | hiredate   | salary   | department |
++-------+-----------------+------------+----------+------------+
+| 21    | Ramesh          | 20/03/2019 | 25000.00 | 60         |
+| 22    | Mudavath Ramesh | 22/03/2019 | 35000.00 | 60         |
+| 23    | Ram             | 20/03/2019 | 25000.00 | 60         |
+| 29    | Ravi            | 20/03/2019 | 25000.00 | 60         |
+| 34    | Rani            | 20/03/2019 | 25000.00 | 60         |
+| 19    | Ramu            | 20/03/2019 | 25000.00 | 60         |
++-------+-----------------+------------+----------+------------+
+
+#=====================================================================================================
+4.use delete command to delete all records from the job table?
+
+# job table
+
+> select * from job;
++-------+-------+
+| jcode | name  |
++-------+-------+
+| 667   | clerk |
+| 668   | staff |
++-------+-------+
+
+> truncate table job;
+Query OK, 0 rows affected (0.14 sec)
+
+> select * from job;
+Empty set (0.00 sec)
+
++-------+-------+
+| jcode | name  |
++-------+-------+
+|       |       |
+|       |       |
++-------+-------+
+
+#========================================xxxxxxxxxxxxxx=============================================================
+
+
+
+
+
+
